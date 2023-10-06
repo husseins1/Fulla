@@ -4,20 +4,52 @@ import { SITE_TITLE } from '../consts';
 ---
 
 <header>
+	<div class="model">
+		<a href="/">خدمات</a>
+			<HeaderLink href="/blog">مدونة</HeaderLink>
+			<HeaderLink href="/about">من نحن</HeaderLink>
+			<a>السعر</a>
+	</div>
 	<nav>
 		<h2><a href="/">{SITE_TITLE}</a></h2>
-			
-			<div class="internal-links">
-				<a href="/">خدمات</a>
-				<HeaderLink href="/blog">مدونة</HeaderLink>
-				<HeaderLink href="/about">من نحن</HeaderLink>
-				<a>السعر</a>
-			</div>
-			
 		
+		<div class="internal-links">
+			<a href="/">خدمات</a>
+			<HeaderLink href="/blog">مدونة</HeaderLink>
+			<HeaderLink href="/about">من نحن</HeaderLink>
+			<a>السعر</a>
+			
+			<div class="menu">
+				<span class="menu-line">
+				</span>
+			</div> 
+		</div>
 	</nav>
+	
 </header>
 <style>
+	.model{
+		position: fixed;
+		left: -100%;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: var(--main-bg-color);
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		transition: all .3s linear ;
+	}
+	.model.open{
+		left:0%;
+	}
+	.model a{
+		color:white;
+		text-decoration: none;
+		font-size:2.5rem;
+	}
 	header {
 		margin: 1rem 2rem;
 		padding: 0.5rem;
@@ -46,11 +78,72 @@ import { SITE_TITLE } from '../consts';
 		margin-left: 1rem;
 		margin-right: 1rem;
 		font-weight: 300;
+		display: none;
 	}
 	.internal-links a:last-child{
 		margin-left:0;
 	}
+	.menu{
+		display: inline-block;
+		cursor:pointer;
+		position: relative;
+		z-index: 2;
+		transition: all 0.3s ease-in-out;
+		
+	}
+	span.menu-line{
+		
+		display:inline-block;
+		position:relative;
+		width: 40px;
+		height:5px;
+		background:white;
+		border-radius: 20px;
+		transition: all 0.3s ease-in-out;
+		
+	}
+	.menu.open span.menu-line,.menu.open span.menu-line::after,.menu.open span.menu-line::before{
+		transform:rotate(90deg);
+	}
+	span.menu-line::after,span.menu-line::before{
+		content:"";
+		position: absolute;
+		width: 40px;
+		height:5px;
+		background:white;
+		border-radius: 20px;
+		transition: all 0.3s ease-in-out;
+	}
+	span.menu-line::after{
+		top: 11px;
+		
+	}
+	span.menu-line::before{
+		top: -11px;
+		
+	}
 	
-	
+	@media screen and (min-width: 600px){
+		.menu{
+			display:none;
+		}
+		.model{
+			display:none;
+		}
+		.internal-links a{
+			display: inline-block;
+		}
+
+		
+	}
 	
 </style>
+<script>
+	console.log("hi")
+	const model =document.querySelector('.model');
+	const menuBtn = document.querySelector('.menu');
+	menuBtn?.addEventListener('click',(e)=>{
+		menuBtn.classList.toggle('open');
+		model?.classList.toggle('open');
+	})
+</script>

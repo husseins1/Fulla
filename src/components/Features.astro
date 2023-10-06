@@ -3,7 +3,7 @@
 ---
 <section>
       <div class="row">
-        <h1>Our Features</h1>
+        <h1>خدماتنا</h1>
       </div>
       <div class="row">
         <!-- Column One -->
@@ -12,11 +12,9 @@
             <div class="icon">
               <i class="fa-solid fa-user"></i>
             </div>
-            <h3>User Friendly</h3>
+            <h3>قص العشب</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-              asperiores natus ad molestiae aliquid explicabo. Iste eaque quo et
-              commodi.
+             نقوم بتقديم خدمة قص العشب باستخدام معدات حديثة وفريق من ذوي الخبرة للحفاظ على انتظام العشب وجماله.
             </p>
           </div>
         </div>
@@ -26,11 +24,9 @@
             <div class="icon">
               <i class="fa-solid fa-shield-halved"></i>
             </div>
-            <h3>Super Secure</h3>
+            <h3>تقديم الأشجار والشجيرات</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-              asperiores natus ad molestiae aliquid explicabo. Iste eaque quo et
-              commodi.
+             نقوم بتقديم خدمات تشذيب وتقليم الأشجار والشجيرات للمحافظة على شكلها وصحتها.
             </p>
           </div>
         </div>
@@ -40,20 +36,64 @@
             <div class="icon">
               <i class="fa-solid fa-headset"></i>
             </div>
-            <h3>Quick Support</h3>
+            <h3>ري الحدائق</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-              asperiores natus ad molestiae aliquid explicabo. Iste eaque quo et
-              commodi.
+              
+نضمن توفير كمية مثالية من الماء لحدائقكم للحفاظ على نضارة النباتات والعشب.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Column One -->
+        <div class="column">
+          <div class="card">
+            <div class="icon">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <h3>تنظيف وصيانة</h3>
+            <p>
+              
+نقوم بإزالة الأوراق الميتة والفروع والأمور الزائدة للحفاظ على نظافة الحديقة ومظهرها الجميل.
+            </p>
+          </div>
+        </div>
+        <!-- Column Two -->
+        <div class="column">
+          <div class="card">
+            <div class="icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>تسميد وعلاجات</h3>
+            <p>
+             
+نستخدم الأسمدة العالية الجودة والعلاجات المخصصة لضمان نمو سليم وصحة النباتات.
+            </p>
+          </div>
+        </div>
+        <!-- Column Three -->
+        <div class="column">
+          <div class="card">
+            <div class="icon">
+              <i class="fa-solid fa-headset"></i>
+            </div>
+            <h3>تصميم وتنسيق الحدائق</h3>
+            <p>
+              
+إذا كنتم تبحثون عن تحسين تصميم حديقتكم أو تنسيقها بشكل مبتكر، نحن هنا لنساعدكم.
             </p>
           </div>
         </div>
       </div>
     </section>
     <style>
+      section{
+        min-height: 100vh;
+      }
         .row {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 .row h1 {
   width: 100%;
@@ -68,6 +108,8 @@
 }
 .card {
   padding: 3.1em 1.25em;
+  max-width: 417px;
+  max-height: 350px;
   text-align: center;
   background: linear-gradient(0deg, #397ef6 10px, transparent 10px);
   background-repeat: no-repeat;
@@ -82,7 +124,7 @@
   height: 2em;
   width: 2em;
   margin: auto;
-  background-color: #397ef6;
+  background-color: var(--main-bg-color);
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -93,7 +135,7 @@
   content: "";
   height: 1.5em;
   width: 1.5em;
-  border: 0.12em solid #397ef6;
+  border: 0.12em solid var(--main-bg-color);
   border-radius: 50%;
   transition: 0.5s;
 }
