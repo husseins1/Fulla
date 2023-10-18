@@ -8,9 +8,12 @@
 	--main-bg-color:#208b3a;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: 'Lateef', serif;
-	
 	
 }
 *,*::after,*::before{
