@@ -1,6 +1,8 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
+const {color} = Astro.props;
+
 ---
 
 <header>
@@ -8,16 +10,19 @@ import { SITE_TITLE } from '../consts';
 		<a href="#features">خدمات</a>
 			<HeaderLink href="/blog">مدونة</HeaderLink>
 			<HeaderLink href="/about">من نحن</HeaderLink>
-			<a>السعر</a>
+			<a href="#pricing">السعر</a>
 	</div>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<h2><a style={{color:color}} href="/">
+			<!-- <img id="logo" src="logo2.png" alt=""> -->
+			{ SITE_TITLE }
+		</a></h2>
 		
-		<div class="internal-links">
-			<a href="#features">خدمات</a>
-			<HeaderLink href="/blog">مدونة</HeaderLink>
-			<HeaderLink href="/about">من نحن</HeaderLink>
-			<a>السعر</a>
+		<div  class="internal-links">
+			<a style={{color:color}} href="#features" >خدمات </a>
+			<HeaderLink style={{color:color}} href="/blog">مدونة</HeaderLink>
+			<HeaderLink style={{color:color}} href="/about">من نحن</HeaderLink>
+			<a style={{color:color}} href="#pricing">السعر</a>
 			
 			<div class="menu">
 				<span class="menu-line">
@@ -28,6 +33,9 @@ import { SITE_TITLE } from '../consts';
 	
 </header>
 <style>
+	/* #logo{
+		width:60px;
+	} */
 	.model{
 		position: fixed;
 		left: -100%;
@@ -45,11 +53,13 @@ import { SITE_TITLE } from '../consts';
 	.model.open{
 		left:0%;
 	}
+	
 	.model a{
 		color:white;
 		text-decoration: none;
 		font-size:2.5rem;
 	}
+	
 	header {
 		margin: 1rem 2rem;
 		padding: 0.5rem;
@@ -139,9 +149,15 @@ import { SITE_TITLE } from '../consts';
 	
 </style>
 <script>
-	console.log("hi")
+	const links = document.querySelectorAll("a");
 	const model =document.querySelector('.model');
 	const menuBtn = document.querySelector('.menu');
+	links?.forEach(e=>{
+		e.addEventListener("click",myEvent=>{
+			menuBtn?.classList.toggle('open');
+		model?.classList.toggle('open');
+		})
+	})
 	menuBtn?.addEventListener('click',(e)=>{
 		menuBtn.classList.toggle('open');
 		model?.classList.toggle('open');

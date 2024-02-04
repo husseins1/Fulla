@@ -18,7 +18,8 @@ import PricingSection from '../components/PricingSection.astro';
 			<Header title={SITE_TITLE} />
 			<main>
 				<h1>ميز حديقتك ويه خدماتنا المميزة</h1>
-				<button>احجز الان</button>
+				<button onclick="scrollToSection('pricing'
+				)">احجز الان</button>
 			</main>
 		</div>
 		<Features />
@@ -64,3 +65,10 @@ import PricingSection from '../components/PricingSection.astro';
 				cursor: pointer;
 			}
 			</style>
+
+<script is:inline>
+  function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    section?.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
